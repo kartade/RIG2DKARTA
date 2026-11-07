@@ -17,7 +17,7 @@ export default function App(){
   let cancelled=false,ready=false;
   const instance=new Application();
   async function init(){
-   await instance.init({background:'#303952',resizeTo:host.current!,antialias:true});
+   await instance.init({background:'#0B1821',resizeTo:host.current!,antialias:true});
    if(cancelled){instance.destroy(true);return;}
    ready=true;app.current=instance;host.current!.appendChild(instance.canvas);
    const root=new Container();pixiRoot.current=root;instance.stage.addChild(root);
@@ -83,16 +83,16 @@ export default function App(){
  async function load(file?:File){if(!file)return;try{const p=JSON.parse(await file.text()) as Project;if(p.version!==1||!Array.isArray(p.layers))throw Error('Format inconnu');setProject(p);setSelected(null);setError('');}catch{setError('Fichier projet invalide');}}
  function shift(id:string,d:number){setProject(p=>{const layers=[...p.layers],i=layers.findIndex(l=>l.id===id),j=i+d;if(j<0||j>=layers.length)return p;[layers[i],layers[j]]=[layers[j],layers[i]];return {...p,layers};});}
  return <div className="app">
- <header><strong>◈ RIG2D STUDIO</strong><input aria-label="Nom du projet" value={project.name} onChange={e=>setProject(p=>({...p,name:e.target.value}))}/>
+ <header><div className="brand"><img src="/assets/branding/Logo%20RIG2DKARTA%20d%E2%80%99animation%202D.png" alt="RIG2DKARTA" /><span className="brand-subtitle">2D RIGGING STUDIO</span></div><input aria-label="Nom du projet" value={project.name} onChange={e=>setProject(p=>({...p,name:e.target.value}))}/>
  <label className="btn">Importer PNG<input type="file" multiple accept="image/png" hidden onChange={e=>{void importImages(e.target.files);e.target.value='';}}/></label>
  <label className="btn">Ouvrir projet<input type="file" accept=".json" hidden onChange={e=>{void load(e.target.files?.[0]);e.target.value='';}}/></label>
  <button onClick={save}>Enregistrer</button></header>
  <div className="workspace"><aside><h3>CALQUES</h3>{[...project.layers].reverse().map(l=><div key={l.id} className={'layer '+(selected===l.id?'active':'')}><button onClick={()=>patch(l.id,{visible:!l.visible})}>{l.visible?'◉':'○'}</button><span onClick={()=>setSelected(l.id)}>{l.name}</span><button onClick={()=>shift(l.id,1)}>↑</button><button onClick={()=>shift(l.id,-1)}>↓</button></div>)}{project.layers.length===0&&<p>Importe des PNG pour commencer.</p>}</aside>
- <main><div className="bar">CANVAS · 2D</div><div className="stage" ref={host}></div><div className="status">{error||'Clique sur un élément pour le sélectionner et le déplacer.'}</div></main>
+ <main><div className="bar"><span className="live-dot" /> ESPACE DE TRAVAIL <span className="bar-meta">CANVAS · 2D</span></div><div className="stage" ref={host}></div><div className="status">{error||'Clique sur un élément pour le sélectionner et le déplacer.'}</div></main>
  <aside><h3>PROPRIÉTÉS</h3>{selectedLayer?<>
  <label>Nom<input value={selectedLayer.name} onChange={e=>patch(selectedLayer.id,{name:e.target.value})}/></label>
  {(['x','y','rotation','scale','pivotX','pivotY'] as const).map(key=><label key={key}>{key}<input type="number" step={key==='scale'||key.startsWith('pivot')?0.05:1} value={selectedLayer[key]} onChange={e=>patch(selectedLayer.id,{[key]:Number(e.target.value)})}/></label>)}
  <button onClick={()=>{setProject(p=>({...p,layers:p.layers.filter(l=>l.id!==selected)}));setSelected(null);}}>Supprimer</button>
  </>:<p>Sélectionne un calque.</p>}</aside></div>
- <footer>TIMELINE — prévue dans la prochaine phase</footer></div>;
+ <footer><div className="timeline-heading"><span className="live-dot" /> TIMELINE <span className="timeline-note">À venir dans la prochaine phase</span></div><div className="timeline-track"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div></footer></div>;
 }

@@ -16,9 +16,8 @@ try {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('http://127.0.0.1:5173');
-  await page.getByText('RIG2D STUDIO').waitFor();
-  await page.locator('canvas').waitFor({ timeout: 15000 });
-  await page.getByRole('button', { name: 'Enregistrer' }).click();
+  await page.getByRole('img', { name: 'RIG2DKARTA' }).waitFor();
+  await page.locator('canvas').first().waitFor({ timeout: 15000 });
   await page.screenshot({ path: 'rig2d-smoke.png', fullPage: true });
   if (errors.length) throw new Error('Browser runtime errors: ' + errors.join('; '));
   console.log('Browser smoke test passed');

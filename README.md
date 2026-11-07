@@ -151,7 +151,13 @@ Avant de proposer une modification importante, ouvrez une issue décrivant le be
 
 ## Licence
 
-**Licence non encore définie.** Le dépôt public n'implique pas automatiquement une licence open source. Un fichier `LICENSE` devra être ajouté après choix de la licence.
+**RIG2D est un logiciel libre et open source sous licence [GNU Affero General Public License v3.0 (AGPL-3.0-only)](LICENSE).**
+
+Cette licence autorise l'utilisation, la modification, la redistribution et l'exploitation commerciale de RIG2D. Elle impose notamment de conserver les mentions de licence et de fournir le code source correspondant dans les situations prévues par l'AGPL, y compris pour certaines versions modifiées utilisées via un réseau.
+
+Les œuvres créées avec RIG2D ne sont pas automatiquement soumises à l'AGPL du logiciel : leurs droits dépendent de leurs propres contenus et licences.
+
+Pour les conditions juridiques complètes, consultez le fichier [LICENSE](LICENSE).
 
 ---
 

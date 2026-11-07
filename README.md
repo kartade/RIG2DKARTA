@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="assets/branding/rig2dkarta-logo.svg" alt="RIG2DKARTA — logo turquoise" width="720" />
+
+</div>
+
 # RIG2D — 2D Rigging Studio
 
 > Éditeur web de rigging 2D généraliste, conçu pour transformer des illustrations découpées en personnages articulés et animables.

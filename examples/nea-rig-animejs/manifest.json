@@ -1,0 +1,62 @@
+{
+  "head": {
+    "width": 619,
+    "height": 510
+  },
+  "torso": {
+    "width": 409,
+    "height": 401
+  },
+  "skirt": {
+    "width": 429,
+    "height": 272
+  },
+  "upper_arm_l": {
+    "width": 135,
+    "height": 231
+  },
+  "upper_arm_r": {
+    "width": 121,
+    "height": 233
+  },
+  "forearm_l": {
+    "width": 139,
+    "height": 225
+  },
+  "forearm_r": {
+    "width": 155,
+    "height": 231
+  },
+  "hand_l": {
+    "width": 118,
+    "height": 151
+  },
+  "hand_r": {
+    "width": 92,
+    "height": 151
+  },
+  "thigh_l": {
+    "width": 188,
+    "height": 355
+  },
+  "thigh_r": {
+    "width": 169,
+    "height": 356
+  },
+  "shin_l": {
+    "width": 143,
+    "height": 341
+  },
+  "shin_r": {
+    "width": 147,
+    "height": 334
+  },
+  "boot_l": {
+    "width": 166,
+    "height": 291
+  },
+  "boot_r": {
+    "width": 164,
+    "height": 288
+  }
+}

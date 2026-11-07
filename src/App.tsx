@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Application, Assets, Sprite, Container } from 'pixi.js';
+import brandLogo from '../assets/branding/Logo RIG2DKARTA d’animation 2D.png';
 type Layer={id:string;name:string;url:string;x:number;y:number;rotation:number;scale:number;pivotX:number;pivotY:number;visible:boolean};
 type Project={version:1;name:string;layers:Layer[]};
 const initial:Project={version:1,name:'Nouveau personnage',layers:[]};
@@ -83,7 +84,7 @@ export default function App(){
  async function load(file?:File){if(!file)return;try{const p=JSON.parse(await file.text()) as Project;if(p.version!==1||!Array.isArray(p.layers))throw Error('Format inconnu');setProject(p);setSelected(null);setError('');}catch{setError('Fichier projet invalide');}}
  function shift(id:string,d:number){setProject(p=>{const layers=[...p.layers],i=layers.findIndex(l=>l.id===id),j=i+d;if(j<0||j>=layers.length)return p;[layers[i],layers[j]]=[layers[j],layers[i]];return {...p,layers};});}
  return <div className="app">
- <header><div className="brand"><img src="/assets/branding/Logo%20RIG2DKARTA%20d%E2%80%99animation%202D.png" alt="RIG2DKARTA" /><span className="brand-subtitle">2D RIGGING STUDIO</span></div><input aria-label="Nom du projet" value={project.name} onChange={e=>setProject(p=>({...p,name:e.target.value}))}/>
+ <header><div className="brand"><img src={brandLogo} alt="RIG2DKARTA" /><span className="brand-subtitle">2D RIGGING STUDIO</span></div><input aria-label="Nom du projet" value={project.name} onChange={e=>setProject(p=>({...p,name:e.target.value}))}/>
  <label className="btn">Importer PNG<input type="file" multiple accept="image/png" hidden onChange={e=>{void importImages(e.target.files);e.target.value='';}}/></label>
  <label className="btn">Ouvrir projet<input type="file" accept=".json" hidden onChange={e=>{void load(e.target.files?.[0]);e.target.value='';}}/></label>
  <button onClick={save}>Enregistrer</button></header>

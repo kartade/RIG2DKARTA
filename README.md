@@ -2,6 +2,8 @@
   <img src="assets/branding/Logo%20RIG2DKARTA%20d%E2%80%99animation%202D.png" alt="Logo officiel RIG2DKARTA — rigging 2D et animation open source" width="760">
 </p>
 
+<p align="center"><a href="README.md">Français</a> · <a href="docs/README.es.md">Español</a> · <a href="docs/README.en.md">English</a> · <a href="docs/README.ja.md">日本語</a> · <a href="docs/README.zh-CN.md">简体中文</a></p>
+
 # RIG2DKARTA — 2D Rigging Studio
 
 > Éditeur web de rigging 2D généraliste, conçu pour transformer des illustrations découpées en personnages articulés et animables.
@@ -13,7 +15,7 @@
 
 ## Présentation
 
-**RIG2D** est un projet d'éditeur 2D **local-first**, accessible dans un navigateur. Il vise à permettre aux illustrateurs, créateurs de mascottes et animateurs d'importer des calques PNG, d'assembler un personnage, de définir des articulations, puis de créer des animations sur une timeline.
+**RIG2DKARTA** est un projet d'éditeur 2D **local-first**, accessible dans un navigateur. Il vise à permettre aux illustrateurs, créateurs de mascottes et animateurs d'importer des calques PNG, d'assembler un personnage, de définir des articulations, puis de créer des animations sur une timeline.
 
 À terme, le projet vise un rigging squelettique, des déformations de maillage, des expressions faciales et des exports GIF ou vidéo. **Ces fonctions ne sont pas encore toutes implémentées.**
 
@@ -33,7 +35,7 @@
 | Déformations de maillage | Évolution future |
 | Rigging assisté par IA | Évolution future |
 
-> **Attention :** ce dépôt est en phase de développement. Le code initial n'a pas encore fait l'objet d'une validation complète par compilation et tests fonctionnels. Certaines interactions peuvent nécessiter des corrections.
+> **Attention :** ce dépôt est en phase de développement. Une compilation de production a réussi sur Vercel, mais les interactions dans le navigateur n'ont pas encore été entièrement validées. Certaines interactions peuvent nécessiter des corrections.
 
 ## Installation
 
@@ -106,7 +108,8 @@ Cette séparation est un objectif de refactorisation, pas l'organisation actuell
 - [x] Initialiser le dépôt et l'interface
 - [x] Ajouter l'import PNG et les propriétés de transformation
 - [x] Ajouter un format JSON initial
-- [ ] Valider la compilation et le rendu navigateur
+- [x] Valider la compilation de production sur Vercel
+- [ ] Valider les interactions dans le navigateur
 - [ ] Corriger les interactions et ajouter Undo/Redo
 - [ ] Ajouter zoom, panoramique et guides visuels
 
@@ -145,7 +148,7 @@ Cette séparation est un objectif de refactorisation, pas l'organisation actuell
 
 ## Exemple de validation
 
-Le personnage chibi **Néa** sert de premier cas d'essai : importer ses éléments PNG, reconstruire sa pose de repos, puis créer une danse articulée. Un second personnage de morphologie différente servira à vérifier que RIG2D reste généraliste.
+Le personnage chibi **Néa** sert de premier cas d'essai : importer ses éléments PNG, reconstruire sa pose de repos, puis créer une danse articulée. Un second personnage de morphologie différente servira à vérifier que RIG2DKARTA reste généraliste.
 
 ## Contribution
 
@@ -155,11 +158,11 @@ Avant de proposer une modification importante, ouvrez une issue décrivant le be
 
 ## Licence
 
-**RIG2D est un logiciel libre et open source sous licence [GNU Affero General Public License v3.0 (AGPL-3.0-only)](LICENSE).**
+**RIG2DKARTA est un logiciel libre et open source sous licence [GNU Affero General Public License v3.0 (AGPL-3.0-only)](LICENSE).**
 
-Cette licence autorise l'utilisation, la modification, la redistribution et l'exploitation commerciale de RIG2D. Elle impose notamment de conserver les mentions de licence et de fournir le code source correspondant dans les situations prévues par l'AGPL, y compris pour certaines versions modifiées utilisées via un réseau.
+Cette licence autorise l'utilisation, la modification, la redistribution et l'exploitation commerciale de RIG2DKARTA. Elle impose notamment de conserver les mentions de licence et de fournir le code source correspondant dans les situations prévues par l'AGPL, y compris pour certaines versions modifiées utilisées via un réseau.
 
-Les œuvres créées avec RIG2D ne sont pas automatiquement soumises à l'AGPL du logiciel : leurs droits dépendent de leurs propres contenus et licences.
+Les œuvres créées avec RIG2DKARTA ne sont pas automatiquement soumises à l'AGPL du logiciel : leurs droits dépendent de leurs propres contenus et licences.
 
 Pour les conditions juridiques complètes, consultez le fichier [LICENSE](LICENSE).
 

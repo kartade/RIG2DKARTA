@@ -1,0 +1,33 @@
+name: Build and browser smoke test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+      - name: TypeScript and production build
+        run: npm run build
+      - name: Install browser test tooling
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Browser smoke test
+        run: node scripts/browser-smoke.mjs
+      - name: Upload browser screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rig2d-browser-screenshot
+          path: rig2d-smoke.png
+          if-no-files-found: ignore

@@ -1,4 +1,8 @@
-# RIG2D — 2D Rigging Studio
+<p align="center">
+  <img src="assets/branding/Logo%20RIG2DKARTA%20d%E2%80%99animation%202D.png" alt="Logo officiel RIG2DKARTA — rigging 2D et animation open source" width="760">
+</p>
+
+# RIG2DKARTA — 2D Rigging Studio
 
 > Éditeur web de rigging 2D généraliste, conçu pour transformer des illustrations découpées en personnages articulés et animables.
 
@@ -42,8 +46,8 @@
 ### Démarrage
 
 ```bash
-git clone https://github.com/kartade/RIG2D.git
-cd RIG2D
+git clone https://github.com/kartade/RIG2DKARTA.git
+cd RIG2DKARTA
 npm install
 npm run dev
 ```
@@ -72,7 +76,7 @@ Les images sont actuellement encodées dans le JSON : les fichiers peuvent donc 
 ## Architecture
 
 ```text
-RIG2D/
+RIG2DKARTA/
 ├── index.html
 ├── package.json
 ├── tsconfig.json
